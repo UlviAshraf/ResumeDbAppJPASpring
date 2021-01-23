@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.company.dao.inter;
+package com.company.dao.impl;
 
 import com.company.entity.User;
 
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author UlviAshraf
  */
-public interface UserDaoInter {
+public interface UserRepositoryCustom {
 
     public List<User> getAllUser(String name, String surname, Integer nationalityId);
 

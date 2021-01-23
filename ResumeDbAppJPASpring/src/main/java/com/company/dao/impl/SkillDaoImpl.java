@@ -9,6 +9,7 @@ import com.company.dao.inter.AbstractDao;
 import com.company.dao.inter.SkillDaoInter;
 import com.company.entity.Skill;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -19,6 +20,7 @@ import javax.persistence.Query;
  * @author UlviAshraf
  */
 @Repository
+@Transactional
 public class SkillDaoImpl implements SkillDaoInter {
     @PersistenceContext
     EntityManager em;

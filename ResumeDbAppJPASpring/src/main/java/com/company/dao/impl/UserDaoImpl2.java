@@ -5,7 +5,6 @@
  */
 package com.company.dao.impl;
 
-import com.company.dao.inter.UserDaoInter;
 import com.company.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +17,7 @@ import java.util.List;
  * @author UlviAshraf
  */
 @Repository(value = "userDao2")
-public class UserDaoImpl2 implements UserDaoInter {
+public class UserDaoImpl2 implements UserRepositoryCustom {
     @PersistenceContext
     EntityManager em;
 

@@ -5,10 +5,8 @@
  */
 package com.company.dao.impl;
 
-import com.company.dao.inter.AbstractDao;
-import com.company.dao.inter.UserDaoInter;
 import com.company.entity.User;
-import org.springframework.context.annotation.Scope;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,15 +20,12 @@ import java.util.List;
  */
 @Repository(value = "userDao1")
 @Transactional
-public class UserDaoImpl implements UserDaoInter {
+public class UserRepositoryCustomImpl implements UserRepositoryCustom {
     @PersistenceContext
     EntityManager em;
 
-    public UserDaoImpl() {
-        System.out.println("UserDao is created");
-    }
-
     @Override
+    @Cacheable(value = "users")
     public List<User> getAllUser(String name, String surname, Integer nationalityId) {
         String jpql = "select u from User u where 1=1";
         if (name != null && !name.trim().isEmpty()) {
