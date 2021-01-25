@@ -18,6 +18,7 @@ public class ResumeDbAppJpaSpringApplication {
     private UserRepository userRepo;
 
     public static void main(String[] args) {
+
         SpringApplication.run(ResumeDbAppJpaSpringApplication.class, args);
     }
 
